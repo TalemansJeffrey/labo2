@@ -31,9 +31,14 @@ export default class Card {
     // 🔥🔥🔥 TODO3: build the HTML element and append it to the DOM
     let card = document.createElement("div");
 
+    //We maken eerst een div aan 
+    //Die geven we dan een class mee
+    //Daarna geven we de div een id mee
+    //Dit gebeurt aan de hand van de counter, die we meegeven in de functie render()
     card.dataset.number = counter + 1;
     card.classList.add("bingo__card");
     
+    //Daarna zetten we dit allemaal in een div, die in de andere div bingo__board gaat staan
  
     card.innerHTML = `<div class="bingo__card--title">${this.title}</div>`;
 
