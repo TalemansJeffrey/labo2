@@ -51,6 +51,9 @@ class Bingo {
     // loop through all the cards in the array and create a new instance of a Card()
     // for()
     for (let i = 0; i < this.cards.length; i++) {
+      //Hier maak ik een nieuw object aan van de class Card.
+      //Ik geef de class Card een parameter mee, namelijk de kaart die ik wil renderen.
+      //Die kaart is de kaart uit de array en die wil ik renderen met de functie renderCards()
       let card = new Card(this.cards[i]);
       card.render(i);
     }
@@ -67,7 +70,13 @@ class Bingo {
     // if (cardsDone.length === 5) {
     // show the animated gif to the winner
     // document.querySelector(".bingo__overlay").style.display = "block";
+
+    //Hier kijkt je of er 5 kaarten zijn aangeklikt. Als dat zo is, dan wordt de gif getoond. PS zou je hier ook een alert kunnen gebruiken?
+
     let cardsDone = document.querySelectorAll(".bingo__card--done");
+
+    //Er worden === gebruikt in plaats van == omdat je dan ook de type moet overeenkomen.
+    
     if (cardsDone.length === 5) {
       document.querySelector(".bingo__overlay").style.display = "block";
     }
@@ -92,8 +101,13 @@ class Bingo {
 
     // save a selection like [1, 7, 8] to localstorage item "bingo"
     // you might want to check out how JSON.stringify() works
+
+    //Pus zorgt er voor dat er nieuwe waarden worden toegevoegd aan het einde van de array
+    //Elke kaart die wordt aangeklikt, zal op het einde van de array worden toegevoegd.
+    //forEach zorgt er voor dat je alle kaarten kan aanklikken en opslaan in de array.
     let cardsSelected= document.querySelectorAll(".bingo__card--done");
     cardsSelected.forEach(card => {cardsWon.push(card.dataset.number);})
+    //Stringify is het tegenoversteled van parse. Het zorgt er voor dat je data kan opslaan in een string.
      localStorage.setItem("bingo", JSON.stringify(cardsWon));
 
      if (cardsWon.length === 0) {
@@ -118,6 +132,9 @@ class Bingo {
       // JSON.parse() will convert the string [1, 7, 8] back to an array which you can loop
       // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
       // .bingo__card--done
+
+      //Parse zorgt er voor dat alles van string, terug omgezet wordt naar JavaScript. Wanneer er data van een server wordt gehaald, is dit altijd een string. 
+      //Door parse te gebruiken, wordt het terug code waarmee je kan gaan werken.
 
       let cardsWon = JSON.parse(localStorage.getItem("bingo"));
       cardsWon.forEach(card => {      
