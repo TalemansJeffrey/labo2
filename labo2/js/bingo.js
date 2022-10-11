@@ -91,7 +91,7 @@ class Bingo {
     // you can simply save an array with the card numbers like [1, 6, 8]
     // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
     let cardsWon = [];
-    console.log("Saving bingo to localstorage");
+    //console.log("Saving bingo to localstorage");
     // let cards = document.querySelectorAll(".bingo__card--done");
 
     // if there are not done cards, remove localstorage
@@ -105,14 +105,18 @@ class Bingo {
     //Pus zorgt er voor dat er nieuwe waarden worden toegevoegd aan het einde van de array
     //Elke kaart die wordt aangeklikt, zal op het einde van de array worden toegevoegd.
     //forEach zorgt er voor dat je alle kaarten kan aanklikken en opslaan in de array.
-    let cardsSelected= document.querySelectorAll(".bingo__card--done");
-    cardsSelected.forEach(card => {cardsWon.push(card.dataset.number);})
+    let cardsSelected = document.querySelectorAll(".bingo__card--done");
+    cardsSelected.forEach(card => {cardsWon.push(card.dataset.number);;
+    })
     //Stringify is het tegenoversteled van parse. Het zorgt er voor dat je data kan opslaan in een string.
      localStorage.setItem("bingo", JSON.stringify(cardsWon));
 
      if (cardsWon.length === 0) {
+
        localStorage.removeItem("bingo");
+
      }
+     
 
 
 

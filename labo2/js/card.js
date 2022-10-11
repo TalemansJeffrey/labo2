@@ -13,12 +13,17 @@ export default class Card {
     console.log("Marking card as done");
     console.log(target);
     // hint: use class .bingo__card--done
+      //Probleem was dat ik enkel op de tekst kon klikken, en niet op het gehele vak.
+      //Nu is de tekst onderdeel van het vak
 
-    if (target.classList.contains("bingo__card--done")) {
-      target.classList.remove("bingo__card--done");
+    if (target.parentElement.classList.contains("bingo__card--done")) {
+
+      target.parentElement.classList.remove("bingo__card--done");
+
     }
     else {
-      target.classList.add("bingo__card--done");
+      target.parentElement.classList.add("bingo__card--done");
+
     }
 
   }
