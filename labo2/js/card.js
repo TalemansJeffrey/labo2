@@ -16,13 +16,13 @@ export default class Card {
       //Probleem was dat ik enkel op de tekst kon klikken, en niet op het gehele vak.
       //Nu is de tekst onderdeel van het vak
 
-    if (target.parentElement.classList.contains("bingo__card--done")) {
+    if (target.classList.contains("bingo__card--title")) {
 
       target.parentElement.classList.remove("bingo__card--done");
 
     }
     else {
-      target.parentElement.classList.add("bingo__card--done");
+      target.classList.add("bingo__card--done");
 
     }
 
