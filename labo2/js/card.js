@@ -16,15 +16,22 @@ export default class Card {
       //Probleem was dat ik enkel op de tekst kon klikken, en niet op het gehele vak.
       //Nu is de tekst onderdeel van het vak
 
+    // als er op heel het vakje geklikt wordt, dan wordt de class toegevoegd
+    //Ik moest toggle gebruiken in plaats van remove of add :)
+    //als ej op de title van de klasse klikt, dan wordt de class done aan het gehele vakje toegekend
+    //als je op het vakje klikt, dan wordt de class done aan het gehele vakje toegekend
+    
+
     if (target.classList.contains("bingo__card--title")) {
-
-      target.parentElement.classList.remove("bingo__card--done");
-
+      target.parentElement.classList.toggle("bingo__card--done");
     }
     else {
-      target.classList.add("bingo__card--done");
-
+      target.classList.toggle("bingo__card--done");
     }
+    
+    
+
+    
 
   }
 
